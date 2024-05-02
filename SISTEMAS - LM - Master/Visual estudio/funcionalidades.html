@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma y Resta 99</title>
+  <style>
+    button {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Suma y Resta 99</h1>
+  <p>Monto total: <span id="total">0</span></p>
+  <p>Monto total1: <span id="total2">0</span></p>
+
+  <p>Número de veces sumado: <span id="sumCount">0</span></p>
+  <button id="sumarBtn">Sumar 99</button>
+  <button id="restarBtn">Restar 99</button>
+
+  <script>
+    // Obtener referencias a los elementos
+    const totalElement = document.getElementById('total');
+
+    const totalElement2 = document.getElementById('total2');
+
+    const sumCountElement = document.getElementById('sumCount');
+    let total = 0;
+    let sumCount = 0;
+
+    // Función para sumar 99 al total y actualizar el contador
+    function sumar() {
+      total += 99;
+      totalElement.textContent = total;
+      sumCount++;
+      sumCountElement.textContent = sumCount;
+    }
+
+
+    function sumar2() {
+      total += 99;
+      totalElement2.textContent = total;
+      sumCount++;
+      sumCountElement.textContent = sumCount;
+    }
+
+
+    // Función para restar 99 al total, si el total es mayor o igual a 99, y actualizar el contador
+    function restar() {
+      if (total >= 99) {
+        total -= 99;
+        totalElement.textContent = total; 
+        sumCount = Math.max(0, sumCount - 1); // Restar 1 si sumCount es mayor que 0
+        sumCountElement.textContent = sumCount;
+      }
+    }
+
+    // Agregar listeners a los botones
+    document.getElementById('sumarBtn').addEventListener('click', sumar2);
+    document.getElementById('sumarBtn').addEventListener('click', sumar);
+    document.getElementById('restarBtn').addEventListener('click', restar);
+  </script>
+</body>
+</html>
